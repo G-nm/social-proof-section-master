@@ -1,0 +1,119 @@
+@import 'config';
+
+body {
+  font-size: $font-size;
+  font-family: 'Spartan', sans-serif;
+  height: 100vh;
+  max-height: 100%;
+  background-image: url('../images/bg-pattern-bottom-desktop.svg'),
+    url('../images/bg-pattern-top-desktop.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-position: right bottom, left top;
+  background-attachment: fixed;
+  margin: 0;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+
+  & main {
+    height: 80%;
+    width: 80%;
+
+    & section {
+      display: grid;
+      grid-template-columns: 0.38fr auto;
+      grid-auto-rows: minmax(250px, auto);
+
+      & article:nth-child(1) {
+        .hero-text {
+          color: $very-dark-magenta;
+          font-weight: bolder;
+          font-size: 40px;
+        }
+        .hero-subtext {
+          color: $dark-grayish-magenta;
+        }
+      }
+      & article:nth-child(2) {
+        justify-self: center;
+        align-self: center;
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1rem;
+
+        & div {
+          background-color: $light-grayish-magenta;
+          padding: 10px 30px;
+          border-radius: 5px;
+          width: fit-content;
+        }
+        & div:nth-child(2) {
+          margin-left: 50px;
+        }
+        & div:nth-child(3) {
+          margin-left: 125px;
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      & section {
+        grid-template-columns: 1fr;
+        place-items: flex-start;
+        gap: 1em;
+        grid-template-rows: auto auto;
+        row-gap: 2rem;
+
+        & article:nth-child(1) {
+          display: grid;
+          place-items: center;
+          text-align: center;
+          gap: 1rem;
+
+          .hero-text {
+            font-size: 30px;
+            width: 75%;
+          }
+          .hero-subtext {
+            font-size: 14px;
+            text-align: center;
+            width: 90%;
+          }
+        }
+        & article:nth-child(2) {
+          justify-self: center;
+          align-self: center;
+          display: grid;
+          grid-template-rows: repeat(3, 1fr);
+          gap: 1rem;
+
+          & div {
+            background-color: $light-grayish-magenta;
+            display: grid;
+            grid-template-rows: auto auto;
+            place-items: center;
+            border-radius: 5px;
+            gap: 0.5em;
+            width: auto;
+          }
+          & div:nth-child(2) {
+            margin-left: 0px;
+          }
+          & div:nth-child(3) {
+            margin-left: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  body {
+    background-image: url('../images/bg-pattern-bottom-mobile.svg'),
+      url('../images/bg-pattern-top-mobile.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-position: right bottom, left top;
+    background-attachment: fixed;
+  }
+}
