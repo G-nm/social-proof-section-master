@@ -1,0 +1,4 @@
+@function torem($size) {
+  $result: $size / 16;
+  @return $result;
+}
