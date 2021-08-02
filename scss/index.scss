@@ -24,7 +24,7 @@ body {
     display: grid;
     gap: 5em;
     padding: 5rem;
-    max-width: 90%;
+    max-width: torem(1440) * 1rem;
     & .hero-section {
       display: grid;
       grid-template-columns: 0.5fr 1fr;
